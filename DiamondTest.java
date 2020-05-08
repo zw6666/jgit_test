@@ -13,7 +13,6 @@ public class DiamondTest {
         HashMap<String,AstTest>map1 = new HashMap<>();
         List<String>list1 = new ArrayList<>();
         List list2 = new ArrayList(10);
-        HashMap map3 = new HashMap(5);
     }
 }
 
