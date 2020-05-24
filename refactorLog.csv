@@ -25,3 +25,57 @@
 /ciphers/RSA.java,避免实例化String对象,3,String类的设计使用了一个共享设计模式，在JVM的底层实际上会自动维护一个对象池（现在是字符串对象池），如果采用直接赋值的模式进行String类对象的实例化操作，那么该实例化对象（字符串内容）将自动的保存到这个对象池之中，如果下次继续 有人使用了直接赋值的模式声明了String类的对象，那么如果此时对象池之中由指定的内容，那么将直接进行引用，如果没有，则开辟新的字符串对象，而后将其保存在对象池之中，以供下次使用,需要结合String实例化场景判断，需人工辅助重构,64,64
 /ciphers/AESEncryption.java,避免实例化String对象,3,String类的设计使用了一个共享设计模式，在JVM的底层实际上会自动维护一个对象池（现在是字符串对象池），如果采用直接赋值的模式进行String类对象的实例化操作，那么该实例化对象（字符串内容）将自动的保存到这个对象池之中，如果下次继续 有人使用了直接赋值的模式声明了String类的对象，那么如果此时对象池之中由指定的内容，那么将直接进行引用，如果没有，则开辟新的字符串对象，而后将其保存在对象池之中，以供下次使用,需要结合String实例化场景判断，需人工辅助重构,102,102
 /ciphers/AESEncryption.java,避免实例化String对象,3,String类的设计使用了一个共享设计模式，在JVM的底层实际上会自动维护一个对象池（现在是字符串对象池），如果采用直接赋值的模式进行String类对象的实例化操作，那么该实例化对象（字符串内容）将自动的保存到这个对象池之中，如果下次继续 有人使用了直接赋值的模式声明了String类的对象，那么如果此时对象池之中由指定的内容，那么将直接进行引用，如果没有，则开辟新的字符串对象，而后将其保存在对象池之中，以供下次使用,需要结合String实例化场景判断，需人工辅助重构,123,123
+============================================================
+2020-05-24 09:31:49:zw666
+重构信息：
+文件名,问题名,问题类型,问题评注,重构信息,起始行,终止行
+/ciphers/SimpleSubstitutionCipher.java,通配符导入，避免import语句使用*符号,3,从一个包中导入所有的类会导致包之间的紧耦合，当一个新版本的库引入了命名冲突时，这样就有可能导致问题发生,考虑单类型导入，需人工辅助重构,3,3
+/ciphers/Caesar.java,在Switch语句中，每个Case应该包含return或break，否则注释说明程序将继续执行到哪一个case为止,2,如果一个case分支的代码中缺少break、return就会导致跨越分支，如果不是有注释的有意图的分支跨越就可能导致潜在的程序错误,case分支添加break，return语句会改变程序运行逻辑，且与开发人员的编程习惯有关，需人工辅助重构,121,121
+/ciphers/Caesar.java,在Switch语句中，每个Case应该包含return或break，否则注释说明程序将继续执行到哪一个case为止,2,如果一个case分支的代码中缺少break、return就会导致跨越分支，如果不是有注释的有意图的分支跨越就可能导致潜在的程序错误,case分支添加break，return语句会改变程序运行逻辑，且与开发人员的编程习惯有关，需人工辅助重构,125,125
+/ciphers/Caesar.java,在Switch语句中，每个Case应该包含return或break，否则注释说明程序将继续执行到哪一个case为止,2,如果一个case分支的代码中缺少break、return就会导致跨越分支，如果不是有注释的有意图的分支跨越就可能导致潜在的程序错误,case分支添加break，return语句会改变程序运行逻辑，且与开发人员的编程习惯有关，需人工辅助重构,126,126
+/ciphers/AES.java,在Switch语句中，每个Case应该包含return或break，否则注释说明程序将继续执行到哪一个case为止,2,如果一个case分支的代码中缺少break、return就会导致跨越分支，如果不是有注释的有意图的分支跨越就可能导致潜在的程序错误,case分支添加break，return语句会改变程序运行逻辑，且与开发人员的编程习惯有关，需人工辅助重构,575,575
+/ciphers/AES.java,switch表达式的case块中表达式语句过多(>7),1,switch表达式的case块中表达式过多会降低程序的可读性，考虑将表达式语句写进一个新的方法或者创建基于switch变量的子类,公共方法的抽取难以用自动化方式实现，需人工辅助重构,576,576
+/ciphers/AES.java,在Switch语句中，每个Case应该包含return或break，否则注释说明程序将继续执行到哪一个case为止,2,如果一个case分支的代码中缺少break、return就会导致跨越分支，如果不是有注释的有意图的分支跨越就可能导致潜在的程序错误,case分支添加break，return语句会改变程序运行逻辑，且与开发人员的编程习惯有关，需人工辅助重构,585,585
+/ciphers/AES.java,switch表达式的case块中表达式语句过多(>7),1,switch表达式的case块中表达式过多会降低程序的可读性，考虑将表达式语句写进一个新的方法或者创建基于switch变量的子类,公共方法的抽取难以用自动化方式实现，需人工辅助重构,586,586
+/ciphers/AES.java,在Switch语句中，每个Case应该包含return或break，否则注释说明程序将继续执行到哪一个case为止,2,如果一个case分支的代码中缺少break、return就会导致跨越分支，如果不是有注释的有意图的分支跨越就可能导致潜在的程序错误,case分支添加break，return语句会改变程序运行逻辑，且与开发人员的编程习惯有关，需人工辅助重构,595,595
+/ciphers/AES.java,不要创建已经存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN),3,避免创建已经存在的BigInteger对象，造成系统资源的浪费,考虑用存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN)替换，需手工辅助重构,252,252
+/ciphers/AES.java,不要创建已经存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN),3,避免创建已经存在的BigInteger对象，造成系统资源的浪费,考虑用存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN)替换，需手工辅助重构,252,252
+/ciphers/AES.java,不要创建已经存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN),3,避免创建已经存在的BigInteger对象，造成系统资源的浪费,考虑用存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN)替换，需手工辅助重构,252,252
+/ciphers/AES.java,不要创建已经存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN),3,避免创建已经存在的BigInteger对象，造成系统资源的浪费,考虑用存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN)替换，需手工辅助重构,253,253
+/ciphers/AES.java,不要创建已经存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN),3,避免创建已经存在的BigInteger对象，造成系统资源的浪费,考虑用存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN)替换，需手工辅助重构,253,253
+/ciphers/AES.java,不要创建已经存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN),3,避免创建已经存在的BigInteger对象，造成系统资源的浪费,考虑用存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN)替换，需手工辅助重构,253,253
+/ciphers/AES.java,不要创建已经存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN),3,避免创建已经存在的BigInteger对象，造成系统资源的浪费,考虑用存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN)替换，需手工辅助重构,253,253
+/ciphers/AES.java,不要创建已经存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN),3,避免创建已经存在的BigInteger对象，造成系统资源的浪费,考虑用存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN)替换，需手工辅助重构,253,253
+/ciphers/AES.java,不要创建已经存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN),3,避免创建已经存在的BigInteger对象，造成系统资源的浪费,考虑用存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN)替换，需手工辅助重构,254,254
+/ciphers/AES.java,不要创建已经存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN),3,避免创建已经存在的BigInteger对象，造成系统资源的浪费,考虑用存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN)替换，需手工辅助重构,254,254
+/ciphers/RSA.java,未使用一行一条语句进行变量声明,1,增强程序可读性，方便后续程序扩展,考虑一行一条语句进行变量声明，需人工辅助重构,30,30
+/ciphers/RSA.java,避免实例化String对象,3,String类的设计使用了一个共享设计模式，在JVM的底层实际上会自动维护一个对象池（现在是字符串对象池），如果采用直接赋值的模式进行String类对象的实例化操作，那么该实例化对象（字符串内容）将自动的保存到这个对象池之中，如果下次继续 有人使用了直接赋值的模式声明了String类的对象，那么如果此时对象池之中由指定的内容，那么将直接进行引用，如果没有，则开辟新的字符串对象，而后将其保存在对象池之中，以供下次使用,需要结合String实例化场景判断，需人工辅助重构,64,64
+/ciphers/AESEncryption.java,避免实例化String对象,3,String类的设计使用了一个共享设计模式，在JVM的底层实际上会自动维护一个对象池（现在是字符串对象池），如果采用直接赋值的模式进行String类对象的实例化操作，那么该实例化对象（字符串内容）将自动的保存到这个对象池之中，如果下次继续 有人使用了直接赋值的模式声明了String类的对象，那么如果此时对象池之中由指定的内容，那么将直接进行引用，如果没有，则开辟新的字符串对象，而后将其保存在对象池之中，以供下次使用,需要结合String实例化场景判断，需人工辅助重构,102,102
+/ciphers/AESEncryption.java,避免实例化String对象,3,String类的设计使用了一个共享设计模式，在JVM的底层实际上会自动维护一个对象池（现在是字符串对象池），如果采用直接赋值的模式进行String类对象的实例化操作，那么该实例化对象（字符串内容）将自动的保存到这个对象池之中，如果下次继续 有人使用了直接赋值的模式声明了String类的对象，那么如果此时对象池之中由指定的内容，那么将直接进行引用，如果没有，则开辟新的字符串对象，而后将其保存在对象池之中，以供下次使用,需要结合String实例化场景判断，需人工辅助重构,123,123
+============================================================
+2020-05-24 09:34:49:zw6666
+重构信息：
+文件名,问题名,问题类型,问题评注,重构信息,起始行,终止行
+/ciphers/SimpleSubstitutionCipher.java,通配符导入，避免import语句使用*符号,3,从一个包中导入所有的类会导致包之间的紧耦合，当一个新版本的库引入了命名冲突时，这样就有可能导致问题发生,考虑单类型导入，需人工辅助重构,3,3
+/ciphers/Caesar.java,在Switch语句中，每个Case应该包含return或break，否则注释说明程序将继续执行到哪一个case为止,2,如果一个case分支的代码中缺少break、return就会导致跨越分支，如果不是有注释的有意图的分支跨越就可能导致潜在的程序错误,case分支添加break，return语句会改变程序运行逻辑，且与开发人员的编程习惯有关，需人工辅助重构,121,121
+/ciphers/Caesar.java,在Switch语句中，每个Case应该包含return或break，否则注释说明程序将继续执行到哪一个case为止,2,如果一个case分支的代码中缺少break、return就会导致跨越分支，如果不是有注释的有意图的分支跨越就可能导致潜在的程序错误,case分支添加break，return语句会改变程序运行逻辑，且与开发人员的编程习惯有关，需人工辅助重构,125,125
+/ciphers/Caesar.java,在Switch语句中，每个Case应该包含return或break，否则注释说明程序将继续执行到哪一个case为止,2,如果一个case分支的代码中缺少break、return就会导致跨越分支，如果不是有注释的有意图的分支跨越就可能导致潜在的程序错误,case分支添加break，return语句会改变程序运行逻辑，且与开发人员的编程习惯有关，需人工辅助重构,126,126
+/ciphers/AES.java,在Switch语句中，每个Case应该包含return或break，否则注释说明程序将继续执行到哪一个case为止,2,如果一个case分支的代码中缺少break、return就会导致跨越分支，如果不是有注释的有意图的分支跨越就可能导致潜在的程序错误,case分支添加break，return语句会改变程序运行逻辑，且与开发人员的编程习惯有关，需人工辅助重构,575,575
+/ciphers/AES.java,switch表达式的case块中表达式语句过多(>7),1,switch表达式的case块中表达式过多会降低程序的可读性，考虑将表达式语句写进一个新的方法或者创建基于switch变量的子类,公共方法的抽取难以用自动化方式实现，需人工辅助重构,576,576
+/ciphers/AES.java,在Switch语句中，每个Case应该包含return或break，否则注释说明程序将继续执行到哪一个case为止,2,如果一个case分支的代码中缺少break、return就会导致跨越分支，如果不是有注释的有意图的分支跨越就可能导致潜在的程序错误,case分支添加break，return语句会改变程序运行逻辑，且与开发人员的编程习惯有关，需人工辅助重构,585,585
+/ciphers/AES.java,switch表达式的case块中表达式语句过多(>7),1,switch表达式的case块中表达式过多会降低程序的可读性，考虑将表达式语句写进一个新的方法或者创建基于switch变量的子类,公共方法的抽取难以用自动化方式实现，需人工辅助重构,586,586
+/ciphers/AES.java,在Switch语句中，每个Case应该包含return或break，否则注释说明程序将继续执行到哪一个case为止,2,如果一个case分支的代码中缺少break、return就会导致跨越分支，如果不是有注释的有意图的分支跨越就可能导致潜在的程序错误,case分支添加break，return语句会改变程序运行逻辑，且与开发人员的编程习惯有关，需人工辅助重构,595,595
+/ciphers/AES.java,不要创建已经存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN),3,避免创建已经存在的BigInteger对象，造成系统资源的浪费,考虑用存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN)替换，需手工辅助重构,252,252
+/ciphers/AES.java,不要创建已经存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN),3,避免创建已经存在的BigInteger对象，造成系统资源的浪费,考虑用存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN)替换，需手工辅助重构,252,252
+/ciphers/AES.java,不要创建已经存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN),3,避免创建已经存在的BigInteger对象，造成系统资源的浪费,考虑用存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN)替换，需手工辅助重构,252,252
+/ciphers/AES.java,不要创建已经存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN),3,避免创建已经存在的BigInteger对象，造成系统资源的浪费,考虑用存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN)替换，需手工辅助重构,253,253
+/ciphers/AES.java,不要创建已经存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN),3,避免创建已经存在的BigInteger对象，造成系统资源的浪费,考虑用存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN)替换，需手工辅助重构,253,253
+/ciphers/AES.java,不要创建已经存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN),3,避免创建已经存在的BigInteger对象，造成系统资源的浪费,考虑用存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN)替换，需手工辅助重构,253,253
+/ciphers/AES.java,不要创建已经存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN),3,避免创建已经存在的BigInteger对象，造成系统资源的浪费,考虑用存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN)替换，需手工辅助重构,253,253
+/ciphers/AES.java,不要创建已经存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN),3,避免创建已经存在的BigInteger对象，造成系统资源的浪费,考虑用存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN)替换，需手工辅助重构,253,253
+/ciphers/AES.java,不要创建已经存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN),3,避免创建已经存在的BigInteger对象，造成系统资源的浪费,考虑用存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN)替换，需手工辅助重构,254,254
+/ciphers/AES.java,不要创建已经存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN),3,避免创建已经存在的BigInteger对象，造成系统资源的浪费,考虑用存在的BigInteger类型的实例(BigInteger.ZERO， BigInteger.ONE， BigInteger.TEN)替换，需手工辅助重构,254,254
+/ciphers/RSA.java,未使用一行一条语句进行变量声明,1,增强程序可读性，方便后续程序扩展,考虑一行一条语句进行变量声明，需人工辅助重构,30,30
+/ciphers/RSA.java,避免实例化String对象,3,String类的设计使用了一个共享设计模式，在JVM的底层实际上会自动维护一个对象池（现在是字符串对象池），如果采用直接赋值的模式进行String类对象的实例化操作，那么该实例化对象（字符串内容）将自动的保存到这个对象池之中，如果下次继续 有人使用了直接赋值的模式声明了String类的对象，那么如果此时对象池之中由指定的内容，那么将直接进行引用，如果没有，则开辟新的字符串对象，而后将其保存在对象池之中，以供下次使用,需要结合String实例化场景判断，需人工辅助重构,64,64
+/ciphers/AESEncryption.java,避免实例化String对象,3,String类的设计使用了一个共享设计模式，在JVM的底层实际上会自动维护一个对象池（现在是字符串对象池），如果采用直接赋值的模式进行String类对象的实例化操作，那么该实例化对象（字符串内容）将自动的保存到这个对象池之中，如果下次继续 有人使用了直接赋值的模式声明了String类的对象，那么如果此时对象池之中由指定的内容，那么将直接进行引用，如果没有，则开辟新的字符串对象，而后将其保存在对象池之中，以供下次使用,需要结合String实例化场景判断，需人工辅助重构,102,102
+/ciphers/AESEncryption.java,避免实例化String对象,3,String类的设计使用了一个共享设计模式，在JVM的底层实际上会自动维护一个对象池（现在是字符串对象池），如果采用直接赋值的模式进行String类对象的实例化操作，那么该实例化对象（字符串内容）将自动的保存到这个对象池之中，如果下次继续 有人使用了直接赋值的模式声明了String类的对象，那么如果此时对象池之中由指定的内容，那么将直接进行引用，如果没有，则开辟新的字符串对象，而后将其保存在对象池之中，以供下次使用,需要结合String实例化场景判断，需人工辅助重构,123,123
